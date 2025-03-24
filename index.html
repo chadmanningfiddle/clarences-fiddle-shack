@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Fiddle Shack</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #fdf6e3;
+      color: #4b3e2a;
+      padding: 20px;
+    }
+    .header {
+      background-color: #7c5c3c;
+      color: #fffbea;
+      padding: 1em;
+      text-align: center;
+      border-bottom: 5px solid #4b3e2a;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin: 1.5em 0;
+    }
+    .nav button {
+      background: #5c4328;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .nav button.active {
+      background: #d4b483;
+      color: #3e2d1b;
+    }
+    .container {
+      display: none;
+      flex-wrap: wrap;
+      gap: 1.5em;
+      justify-content: center;
+    }
+    .container.active {
+      display: flex;
+    }
+    .class-card {
+      width: 300px;
+      background: #fff9e6;
+      border: 2px solid #d4b483;
+      border-radius: 12px;
+      padding: 1em;
+      position: relative;
+      transition: 0.3s ease;
+    }
+    .class-card.selected {
+      box-shadow: 0 0 12px 4px #f4d07e;
+      background-color: #fff3d1;
+    }
+    .class-card h3 {
+      margin-top: 0;
+    }
+    .class-card button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #5c4328;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .sidebar {
+      margin-top: 2em;
+      background: #fdf0d5;
+      padding: 1.5em;
+      border-radius: 12px;
+      border: 2px solid #d4b483;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Monday Sessions</h1>
+    <p>Moving Right Along: March 24, April 14, April 28<br/>
+    A Relaxed Pace: March 31, April 7, April 21, May 5</p>
+  </div>
+
+  <div class="nav">
+    <button onclick="switchView('moving')" class="active" id="movingBtn">Moving Right Along</button>
+    <button onclick="switchView('relaxed')" id="relaxedBtn">A Relaxed Pace</button>
+  </div>
+
+  <div class="container active" id="moving">
+    <div class="class-card" data-index="0">
+      <h3>Oldtime Morning Groove</h3>
+      <ul><li>Cumberland Gap</li><li>Tippin' Back the Corn</li><li>Sail Away Ladies</li><li>Lazy John</li></ul>
+      <button onclick="selectClass(0, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="1">
+      <h3>Twin Fiddles</h3>
+      <ul><li>Goodbye Liza Jane</li><li>Pachelbel's Frolic</li><li>Fireball Mail</li></ul>
+      <button onclick="selectClass(1, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="2">
+      <h3>Swing Time</h3>
+      <ul><li>Blues in B-flat</li><li>Lady Be Good in G</li><li>Honeysuckle Rose in F</li><li>Minor Swing in A minor</li></ul>
+      <button onclick="selectClass(2, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="3">
+      <h3>Bluegrass Instrumentals</h3>
+      <ul><li>Clinch Mountain Backstep</li><li>Road to Columbus</li><li>June Apple</li><li>Big Sciota</li></ul>
+      <button onclick="selectClass(3, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="4">
+      <h3>Bluegrass Jam</h3>
+      <ul><li>Selected by musicians</li></ul>
+      <button onclick="selectClass(4, this)">Select</button>
+    </div>
+  </div>
+
+  <div class="container" id="relaxed">
+    <div class="class-card" data-index="5">
+      <h3>Oldtime – A Relaxed Pace</h3>
+      <ul><li>Lazy John</li><li>Swannanoa Waltz</li><li>Cumberland Gap</li><li>Tippin' Back the Corn</li><li>Elk River Blues</li></ul>
+      <button onclick="selectClass(5, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="6">
+      <h3>Twin Fiddles – A Relaxed Pace</h3>
+      <ul><li>Fireball Mail</li><li>Pachelbel's Frolic</li><li>Goodbye Liza Jane</li></ul>
+      <button onclick="selectClass(6, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="7">
+      <h3>Swing – A Relaxed Pace</h3>
+      <ul><li>Blues in E</li><li>Summertime in E minor</li><li>Lady Be Good in G minor</li><li>Swing in A minor</li><li>Bluegrass</li></ul>
+      <button onclick="selectClass(7, this)">Select</button>
+    </div>
+    <div class="class-card" data-index="8">
+      <h3>Bluegrass Instrumentals – A Relaxed Pace</h3>
+      <ul><li>Whiskey Before Breakfast</li><li>Soldier's Joy</li><li>June Apple</li></ul>
+      <button onclick="selectClass(8, this)">Select</button>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <h3>Your Total</h3>
+    <p id="total-display">$0</p>
+    <button>Checkout</button>
+    <p><strong>To reserve a spot, please follow these steps:</strong></p>
+    <ol>
+      <li>Select classes</li>
+      <li>Make Payment with Zelle or Venmo (outside of the fiddle shack)</li>
+      <li>If you plan to pay by check or cash please email me before Monday</li>
+      <li>Include date and class choices along with your payment<br><br>
+        <em>Note: Classes priced at $25 drop to $20 per class once you select four or more classes in total</em></li>
+    </ol>
+    <p><strong>Zelle:</strong> chadmanning@gmail.com<br>
+       <strong>Venmo:</strong> chad-manning-18</p>
+  </div>
+
+  <script>
+    const prices = [25, 25, 25, 25, 35, 25, 25, 25, 25];
+    function selectClass(index, btn) {
+      const card = btn.closest('.class-card');
+      card.classList.toggle('selected');
+      btn.classList.toggle('selected');
+      updateTotal();
+    }
+    function updateTotal() {
+      const selected = document.querySelectorAll('.class-card.selected');
+      let total = 0;
+      selected.forEach(card => {
+        const i = parseInt(card.getAttribute('data-index'));
+        let price = prices[i];
+        total += (selected.length >= 4 ? price - 5 : price);
+      });
+      document.getElementById('total-display').textContent = `$${total}`;
+    }
+    function switchView(view) {
+      const moving = document.getElementById('moving');
+      const relaxed = document.getElementById('relaxed');
+      document.getElementById('movingBtn').classList.toggle('active', view === 'moving');
+      document.getElementById('relaxedBtn').classList.toggle('active', view === 'relaxed');
+      moving.classList.toggle('active', view === 'moving');
+      relaxed.classList.toggle('active', view === 'relaxed');
+    }
+  </script>
+</body>
+</html>
