@@ -1,0 +1,42 @@
+[debug] [2025-03-24T11:34:12.412Z] ----------------------------------------------------------------------
+[debug] [2025-03-24T11:34:12.413Z] Command:       /usr/local/share/nvm/versions/node/v20.18.1/bin/node /home/codespace/nvm/current/bin/firebase serve --only hosting --port 3000
+[debug] [2025-03-24T11:34:12.414Z] CLI Version:   13.35.1
+[debug] [2025-03-24T11:34:12.414Z] Platform:      linux
+[debug] [2025-03-24T11:34:12.414Z] Node Version:  v20.18.1
+[debug] [2025-03-24T11:34:12.414Z] Time:          Mon Mar 24 2025 11:34:12 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-03-24T11:34:12.414Z] Env Overrides: GITHUB_API_URL, GITHUB_API_URL
+[debug] [2025-03-24T11:34:12.414Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-24T11:34:12.703Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-24T11:34:12.703Z] > authorizing via signed-in user (chadmanning@gmail.com)
+[debug] [2025-03-24T11:34:12.703Z] [iam] checking project myfiddleshack---clarence for permissions ["firebase.projects.get"]
+[debug] [2025-03-24T11:34:12.704Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:12.704Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:12.705Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence:testIamPermissions [none]
+[debug] [2025-03-24T11:34:12.705Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence:testIamPermissions x-goog-quota-user=projects/myfiddleshack---clarence
+[debug] [2025-03-24T11:34:12.705Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-24T11:34:12.955Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence:testIamPermissions 200
+[debug] [2025-03-24T11:34:12.955Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-24T11:34:12.955Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:12.955Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:12.955Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence [none]
+[debug] [2025-03-24T11:34:13.082Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence 200
+[debug] [2025-03-24T11:34:13.082Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/myfiddleshack---clarence {"projectNumber":"897398749646","projectId":"myfiddleshack---clarence","lifecycleState":"ACTIVE","name":"MyFiddleShack - Clarence","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-03-24T10:40:42.248559Z"}
+[debug] [2025-03-24T11:34:13.084Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:13.084Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:13.084Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/myfiddleshack---clarence/sites 
+[debug] [2025-03-24T11:34:13.882Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/myfiddleshack---clarence/sites 200
+[debug] [2025-03-24T11:34:13.882Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/myfiddleshack---clarence/sites {"sites":[{"name":"projects/myfiddleshack---clarence/sites/myfiddleshack---clarence","defaultUrl":"https://myfiddleshack---clarence.web.app","appId":"1:897398749646:web:d5d4289b32ac4906fcd39f","type":"DEFAULT_SITE"}]}
+[debug] [2025-03-24T11:34:13.882Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:13.882Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:13.883Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/myfiddleshack---clarence/webApps/1:897398749646:web:d5d4289b32ac4906fcd39f/config [none]
+[debug] [2025-03-24T11:34:14.404Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/myfiddleshack---clarence/webApps/1:897398749646:web:d5d4289b32ac4906fcd39f/config 200
+[debug] [2025-03-24T11:34:14.404Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/myfiddleshack---clarence/webApps/1:897398749646:web:d5d4289b32ac4906fcd39f/config {"projectId":"myfiddleshack---clarence","appId":"1:897398749646:web:d5d4289b32ac4906fcd39f","storageBucket":"myfiddleshack---clarence.firebasestorage.app","apiKey":"AIzaSyBfEGC1Z9Y2AokTNh96ytFIJGdKfgelXJA","authDomain":"myfiddleshack---clarence.firebaseapp.com","messagingSenderId":"897398749646","measurementId":"G-01NL33RH9S"}
+[debug] [2025-03-24T11:34:14.408Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:14.408Z] Checked if tokens are valid: true, expires at: 1742818042297
+[debug] [2025-03-24T11:34:14.409Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/myfiddleshack---clarence [none]
+[debug] [2025-03-24T11:34:14.758Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/myfiddleshack---clarence 200
+[debug] [2025-03-24T11:34:14.758Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/myfiddleshack---clarence {"projectId":"myfiddleshack---clarence","projectNumber":"897398749646","displayName":"MyFiddleShack - Clarence","name":"projects/myfiddleshack---clarence","resources":{"hostingSite":"myfiddleshack---clarence"},"state":"ACTIVE","etag":"1_d209c642-ff01-4d21-8db6-4b383783d664"}
+[info] ✔  hosting[myfiddleshack---clarence]: Local server: http://localhost:3000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:3000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [24/Mar/2025:11:34:17 +0000] "GET / HTTP/1.1" 200 - "https://jubilant-waddle-9756r6j7xwvxf7pgw.github.dev/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [24/Mar/2025:11:34:17 +0000] \"GET / HTTP/1.1\" 200 - \"https://jubilant-waddle-9756r6j7xwvxf7pgw.github.dev/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0\""}}
+[info] i  hosting: ::1 - - [24/Mar/2025:11:34:25 +0000] "GET / HTTP/1.1" 200 - "https://jubilant-waddle-9756r6j7xwvxf7pgw.github.dev/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [24/Mar/2025:11:34:25 +0000] \"GET / HTTP/1.1\" 200 - \"https://jubilant-waddle-9756r6j7xwvxf7pgw.github.dev/\" \"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0\""}}
